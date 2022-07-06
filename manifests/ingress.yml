@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "portfoliomanage-1031"
+    labels:
+        app: "portfoliomanage-1031"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: mutualfund-portfoliomanage-1031.b5b2d980d9fb4e7bb5f7.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "portfoliomanage-1031"
+                servicePort: 80
